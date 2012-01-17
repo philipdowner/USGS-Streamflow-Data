@@ -1,0 +1,621 @@
+{
+  "name" : "ns1:timeSeriesResponseType",
+  "value" : {
+    "queryInfo" : {
+      "creationTime" : 1319733946000,
+      "queryURL" : "http://waterservices.usgs.gov/nwis/iv",
+      "criteria" : {
+        "locationParam" : "[ALL:06026500, ALL:06027600, ALL:06036650]",
+        "variableParam" : "[00060, 00065, 00010]"
+      },
+      "note" : [ {
+        "value" : "[ALL:06026500, ALL:06027600, ALL:06036650]",
+        "title" : "filter:sites"
+      }, {
+        "value" : "[mode=LATEST, modifiedSince=null]",
+        "title" : "filter:timeRange"
+      }, {
+        "value" : "methodIds=[ALL]",
+        "title" : "filter:methodId"
+      }, {
+        "value" : "2011-10-27T16:45:46.653Z",
+        "title" : "requestDT"
+      }, {
+        "value" : "1e5f6c40-00bb-11e1-80b7-00144f2bed4a",
+        "title" : "requestId"
+      }, {
+        "value" : "Provisional data are subject to revision. Go to http://waterdata.usgs.gov/nwis/help/?provisional for more information.",
+        "title" : "disclaimer"
+      }, {
+        "value" : "caas01",
+        "title" : "server"
+      } ]
+    },
+    "timeSeries" : [ {
+      "sourceInfo" : {
+        "siteName" : "Jefferson River near Twin Bridges MT",
+        "siteCode" : [ {
+          "value" : "06026500",
+          "network" : "NWIS",
+          "agencyCode" : "USGS"
+        } ],
+        "timeZoneInfo" : {
+          "defaultTimeZone" : {
+            "zoneOffset" : "-07:00",
+            "zoneAbbreviation" : "MST"
+          },
+          "daylightSavingsTimeZone" : {
+            "zoneOffset" : "-06:00",
+            "zoneAbbreviation" : "MDT"
+          },
+          "siteUsesDaylightSavingsTime" : true
+        },
+        "geoLocation" : {
+          "geogLocation" : {
+            "latitude" : 45.6140927,
+            "longitude" : -112.330002,
+            "srs" : "EPSG:4326"
+          }
+        },
+        "siteProperty" : [ {
+          "value" : "ST",
+          "name" : "siteTypeCd"
+        }, {
+          "value" : "10020005",
+          "name" : "hucCd"
+        }, {
+          "value" : "30",
+          "name" : "stateCd"
+        }, {
+          "value" : "30057",
+          "name" : "countyCd"
+        } ]
+      },
+      "variable" : {
+        "variableCode" : [ {
+          "value" : "00060",
+          "network" : "NWIS",
+          "vocabulary" : "NWIS:UnitValues",
+          "default" : true,
+          "variableID" : 45807197
+        } ],
+        "variableName" : "Streamflow, ft&#179;/s",
+        "variableDescription" : "Discharge, cubic feet per second",
+        "valueType" : "Derived Value",
+        "unit" : {
+          "unitAbbreviation" : "cfs"
+        },
+        "options" : {
+          "option" : [ {
+            "name" : "Statistic",
+            "optionCode" : "00011"
+          } ]
+        },
+        "noDataValue" : -999999.0,
+        "oid" : "45807197"
+      },
+      "values" : [ {
+        "value" : [ {
+          "value" : "1700",
+          "qualifiers" : [ "P" ],
+          "dateTime" : "2011-10-27T10:15:00.000-06:00"
+        } ],
+        "qualifier" : [ {
+          "qualifierCode" : "P",
+          "qualifierDescription" : "Provisional data subject to revision.",
+          "qualifierID" : 0,
+          "network" : "NWIS",
+          "vocabulary" : "uv_rmk_cd"
+        } ],
+        "method" : [ {
+          "methodDescription" : "",
+          "methodID" : 2
+        } ]
+      } ],
+      "name" : "USGS:06026500:00060:00011"
+    }, {
+      "sourceInfo" : {
+        "siteName" : "Jefferson River near Twin Bridges MT",
+        "siteCode" : [ {
+          "value" : "06026500",
+          "network" : "NWIS",
+          "agencyCode" : "USGS"
+        } ],
+        "timeZoneInfo" : {
+          "defaultTimeZone" : {
+            "zoneOffset" : "-07:00",
+            "zoneAbbreviation" : "MST"
+          },
+          "daylightSavingsTimeZone" : {
+            "zoneOffset" : "-06:00",
+            "zoneAbbreviation" : "MDT"
+          },
+          "siteUsesDaylightSavingsTime" : true
+        },
+        "geoLocation" : {
+          "geogLocation" : {
+            "latitude" : 45.6140927,
+            "longitude" : -112.330002,
+            "srs" : "EPSG:4326"
+          }
+        },
+        "siteProperty" : [ {
+          "value" : "ST",
+          "name" : "siteTypeCd"
+        }, {
+          "value" : "10020005",
+          "name" : "hucCd"
+        }, {
+          "value" : "30",
+          "name" : "stateCd"
+        }, {
+          "value" : "30057",
+          "name" : "countyCd"
+        } ]
+      },
+      "variable" : {
+        "variableCode" : [ {
+          "value" : "00065",
+          "network" : "NWIS",
+          "vocabulary" : "NWIS:UnitValues",
+          "default" : true,
+          "variableID" : 45807202
+        } ],
+        "variableName" : "Gage height, ft",
+        "variableDescription" : "Gage height, feet",
+        "valueType" : "Derived Value",
+        "unit" : {
+          "unitAbbreviation" : "ft"
+        },
+        "options" : {
+          "option" : [ {
+            "name" : "Statistic",
+            "optionCode" : "00011"
+          } ]
+        },
+        "noDataValue" : -999999.0,
+        "oid" : "45807202"
+      },
+      "values" : [ {
+        "value" : [ {
+          "value" : "4.33",
+          "qualifiers" : [ "P" ],
+          "dateTime" : "2011-10-27T10:15:00.000-06:00"
+        } ],
+        "qualifier" : [ {
+          "qualifierCode" : "P",
+          "qualifierDescription" : "Provisional data subject to revision.",
+          "qualifierID" : 0,
+          "network" : "NWIS",
+          "vocabulary" : "uv_rmk_cd"
+        } ],
+        "method" : [ {
+          "methodDescription" : "",
+          "methodID" : 7
+        } ]
+      } ],
+      "name" : "USGS:06026500:00065:00011"
+    }, {
+      "sourceInfo" : {
+        "siteName" : "Jefferson River at Parsons Bdg nr Silver Star, MT",
+        "siteCode" : [ {
+          "value" : "06027600",
+          "network" : "NWIS",
+          "agencyCode" : "USGS"
+        } ],
+        "timeZoneInfo" : {
+          "defaultTimeZone" : {
+            "zoneOffset" : "-07:00",
+            "zoneAbbreviation" : "MST"
+          },
+          "daylightSavingsTimeZone" : {
+            "zoneOffset" : "-06:00",
+            "zoneAbbreviation" : "MDT"
+          },
+          "siteUsesDaylightSavingsTime" : true
+        },
+        "geoLocation" : {
+          "geogLocation" : {
+            "latitude" : 45.74714858,
+            "longitude" : -112.1863848,
+            "srs" : "EPSG:4326"
+          }
+        },
+        "siteProperty" : [ {
+          "value" : "ST",
+          "name" : "siteTypeCd"
+        }, {
+          "value" : "10020005",
+          "name" : "hucCd"
+        }, {
+          "value" : "30",
+          "name" : "stateCd"
+        }, {
+          "value" : "30057",
+          "name" : "countyCd"
+        } ]
+      },
+      "variable" : {
+        "variableCode" : [ {
+          "value" : "00010",
+          "network" : "NWIS",
+          "vocabulary" : "NWIS:UnitValues",
+          "default" : true,
+          "variableID" : 45807042
+        } ],
+        "variableName" : "Temperature, water, &#176;C",
+        "variableDescription" : "Temperature, water, degrees Celsius",
+        "valueType" : "Derived Value",
+        "unit" : {
+          "unitAbbreviation" : "deg C"
+        },
+        "options" : {
+          "option" : [ {
+            "name" : "Statistic",
+            "optionCode" : "00011"
+          } ]
+        },
+        "noDataValue" : -999999.0,
+        "oid" : "45807042"
+      },
+      "values" : [ {
+        "value" : [ {
+          "value" : "-999999",
+          "qualifiers" : [ "P", "Ssn" ],
+          "dateTime" : "2011-10-27T09:30:00.000-06:00"
+        } ],
+        "qualifier" : [ {
+          "qualifierCode" : "Ssn",
+          "qualifierDescription" : "Parameter monitored seasonally",
+          "qualifierID" : 0,
+          "network" : "NWIS",
+          "vocabulary" : "uv_rmk_cd"
+        }, {
+          "qualifierCode" : "P",
+          "qualifierDescription" : "Provisional data subject to revision.",
+          "qualifierID" : 1,
+          "network" : "NWIS",
+          "vocabulary" : "uv_rmk_cd"
+        } ],
+        "method" : [ {
+          "methodDescription" : "",
+          "methodID" : 3
+        } ]
+      } ],
+      "name" : "USGS:06027600:00010:00011"
+    }, {
+      "sourceInfo" : {
+        "siteName" : "Jefferson River at Parsons Bdg nr Silver Star, MT",
+        "siteCode" : [ {
+          "value" : "06027600",
+          "network" : "NWIS",
+          "agencyCode" : "USGS"
+        } ],
+        "timeZoneInfo" : {
+          "defaultTimeZone" : {
+            "zoneOffset" : "-07:00",
+            "zoneAbbreviation" : "MST"
+          },
+          "daylightSavingsTimeZone" : {
+            "zoneOffset" : "-06:00",
+            "zoneAbbreviation" : "MDT"
+          },
+          "siteUsesDaylightSavingsTime" : true
+        },
+        "geoLocation" : {
+          "geogLocation" : {
+            "latitude" : 45.74714858,
+            "longitude" : -112.1863848,
+            "srs" : "EPSG:4326"
+          }
+        },
+        "siteProperty" : [ {
+          "value" : "ST",
+          "name" : "siteTypeCd"
+        }, {
+          "value" : "10020005",
+          "name" : "hucCd"
+        }, {
+          "value" : "30",
+          "name" : "stateCd"
+        }, {
+          "value" : "30057",
+          "name" : "countyCd"
+        } ]
+      },
+      "variable" : {
+        "variableCode" : [ {
+          "value" : "00060",
+          "network" : "NWIS",
+          "vocabulary" : "NWIS:UnitValues",
+          "default" : true,
+          "variableID" : 45807197
+        } ],
+        "variableName" : "Streamflow, ft&#179;/s",
+        "variableDescription" : "Discharge, cubic feet per second",
+        "valueType" : "Derived Value",
+        "unit" : {
+          "unitAbbreviation" : "cfs"
+        },
+        "options" : {
+          "option" : [ {
+            "name" : "Statistic",
+            "optionCode" : "00011"
+          } ]
+        },
+        "noDataValue" : -999999.0,
+        "oid" : "45807197"
+      },
+      "values" : [ {
+        "value" : [ {
+          "value" : "1730",
+          "qualifiers" : [ "P" ],
+          "dateTime" : "2011-10-27T09:30:00.000-06:00"
+        } ],
+        "qualifier" : [ {
+          "qualifierCode" : "P",
+          "qualifierDescription" : "Provisional data subject to revision.",
+          "qualifierID" : 0,
+          "network" : "NWIS",
+          "vocabulary" : "uv_rmk_cd"
+        } ],
+        "method" : [ {
+          "methodDescription" : "",
+          "methodID" : 2
+        } ]
+      } ],
+      "name" : "USGS:06027600:00060:00011"
+    }, {
+      "sourceInfo" : {
+        "siteName" : "Jefferson River at Parsons Bdg nr Silver Star, MT",
+        "siteCode" : [ {
+          "value" : "06027600",
+          "network" : "NWIS",
+          "agencyCode" : "USGS"
+        } ],
+        "timeZoneInfo" : {
+          "defaultTimeZone" : {
+            "zoneOffset" : "-07:00",
+            "zoneAbbreviation" : "MST"
+          },
+          "daylightSavingsTimeZone" : {
+            "zoneOffset" : "-06:00",
+            "zoneAbbreviation" : "MDT"
+          },
+          "siteUsesDaylightSavingsTime" : true
+        },
+        "geoLocation" : {
+          "geogLocation" : {
+            "latitude" : 45.74714858,
+            "longitude" : -112.1863848,
+            "srs" : "EPSG:4326"
+          }
+        },
+        "siteProperty" : [ {
+          "value" : "ST",
+          "name" : "siteTypeCd"
+        }, {
+          "value" : "10020005",
+          "name" : "hucCd"
+        }, {
+          "value" : "30",
+          "name" : "stateCd"
+        }, {
+          "value" : "30057",
+          "name" : "countyCd"
+        } ]
+      },
+      "variable" : {
+        "variableCode" : [ {
+          "value" : "00065",
+          "network" : "NWIS",
+          "vocabulary" : "NWIS:UnitValues",
+          "default" : true,
+          "variableID" : 45807202
+        } ],
+        "variableName" : "Gage height, ft",
+        "variableDescription" : "Gage height, feet",
+        "valueType" : "Derived Value",
+        "unit" : {
+          "unitAbbreviation" : "ft"
+        },
+        "options" : {
+          "option" : [ {
+            "name" : "Statistic",
+            "optionCode" : "00011"
+          } ]
+        },
+        "noDataValue" : -999999.0,
+        "oid" : "45807202"
+      },
+      "values" : [ {
+        "value" : [ {
+          "value" : "4.62",
+          "qualifiers" : [ "P" ],
+          "dateTime" : "2011-10-27T09:30:00.000-06:00"
+        } ],
+        "qualifier" : [ {
+          "qualifierCode" : "P",
+          "qualifierDescription" : "Provisional data subject to revision.",
+          "qualifierID" : 0,
+          "network" : "NWIS",
+          "vocabulary" : "uv_rmk_cd"
+        } ],
+        "method" : [ {
+          "methodDescription" : "",
+          "methodID" : 1
+        } ]
+      } ],
+      "name" : "USGS:06027600:00065:00011"
+    }, {
+      "sourceInfo" : {
+        "siteName" : "Jefferson River near Three Forks MT",
+        "siteCode" : [ {
+          "value" : "06036650",
+          "network" : "NWIS",
+          "agencyCode" : "USGS"
+        } ],
+        "timeZoneInfo" : {
+          "defaultTimeZone" : {
+            "zoneOffset" : "-07:00",
+            "zoneAbbreviation" : "MST"
+          },
+          "daylightSavingsTimeZone" : {
+            "zoneOffset" : "-06:00",
+            "zoneAbbreviation" : "MDT"
+          },
+          "siteUsesDaylightSavingsTime" : true
+        },
+        "geoLocation" : {
+          "geogLocation" : {
+            "latitude" : 45.89770587,
+            "longitude" : -111.596639,
+            "srs" : "EPSG:4326"
+          }
+        },
+        "siteProperty" : [ {
+          "value" : "ST",
+          "name" : "siteTypeCd"
+        }, {
+          "value" : "10020005",
+          "name" : "hucCd"
+        }, {
+          "value" : "30",
+          "name" : "stateCd"
+        }, {
+          "value" : "30007",
+          "name" : "countyCd"
+        } ]
+      },
+      "variable" : {
+        "variableCode" : [ {
+          "value" : "00060",
+          "network" : "NWIS",
+          "vocabulary" : "NWIS:UnitValues",
+          "default" : true,
+          "variableID" : 45807197
+        } ],
+        "variableName" : "Streamflow, ft&#179;/s",
+        "variableDescription" : "Discharge, cubic feet per second",
+        "valueType" : "Derived Value",
+        "unit" : {
+          "unitAbbreviation" : "cfs"
+        },
+        "options" : {
+          "option" : [ {
+            "name" : "Statistic",
+            "optionCode" : "00011"
+          } ]
+        },
+        "noDataValue" : -999999.0,
+        "oid" : "45807197"
+      },
+      "values" : [ {
+        "value" : [ {
+          "value" : "2000",
+          "qualifiers" : [ "P" ],
+          "dateTime" : "2011-10-27T10:00:00.000-06:00"
+        } ],
+        "qualifier" : [ {
+          "qualifierCode" : "P",
+          "qualifierDescription" : "Provisional data subject to revision.",
+          "qualifierID" : 0,
+          "network" : "NWIS",
+          "vocabulary" : "uv_rmk_cd"
+        } ],
+        "method" : [ {
+          "methodDescription" : "",
+          "methodID" : 8
+        } ]
+      } ],
+      "name" : "USGS:06036650:00060:00011"
+    }, {
+      "sourceInfo" : {
+        "siteName" : "Jefferson River near Three Forks MT",
+        "siteCode" : [ {
+          "value" : "06036650",
+          "network" : "NWIS",
+          "agencyCode" : "USGS"
+        } ],
+        "timeZoneInfo" : {
+          "defaultTimeZone" : {
+            "zoneOffset" : "-07:00",
+            "zoneAbbreviation" : "MST"
+          },
+          "daylightSavingsTimeZone" : {
+            "zoneOffset" : "-06:00",
+            "zoneAbbreviation" : "MDT"
+          },
+          "siteUsesDaylightSavingsTime" : true
+        },
+        "geoLocation" : {
+          "geogLocation" : {
+            "latitude" : 45.89770587,
+            "longitude" : -111.596639,
+            "srs" : "EPSG:4326"
+          }
+        },
+        "siteProperty" : [ {
+          "value" : "ST",
+          "name" : "siteTypeCd"
+        }, {
+          "value" : "10020005",
+          "name" : "hucCd"
+        }, {
+          "value" : "30",
+          "name" : "stateCd"
+        }, {
+          "value" : "30007",
+          "name" : "countyCd"
+        } ]
+      },
+      "variable" : {
+        "variableCode" : [ {
+          "value" : "00065",
+          "network" : "NWIS",
+          "vocabulary" : "NWIS:UnitValues",
+          "default" : true,
+          "variableID" : 45807202
+        } ],
+        "variableName" : "Gage height, ft",
+        "variableDescription" : "Gage height, feet",
+        "valueType" : "Derived Value",
+        "unit" : {
+          "unitAbbreviation" : "ft"
+        },
+        "options" : {
+          "option" : [ {
+            "name" : "Statistic",
+            "optionCode" : "00011"
+          } ]
+        },
+        "noDataValue" : -999999.0,
+        "oid" : "45807202"
+      },
+      "values" : [ {
+        "value" : [ {
+          "value" : "4.37",
+          "qualifiers" : [ "P" ],
+          "dateTime" : "2011-10-27T10:00:00.000-06:00"
+        } ],
+        "qualifier" : [ {
+          "qualifierCode" : "P",
+          "qualifierDescription" : "Provisional data subject to revision.",
+          "qualifierID" : 0,
+          "network" : "NWIS",
+          "vocabulary" : "uv_rmk_cd"
+        } ],
+        "method" : [ {
+          "methodDescription" : "",
+          "methodID" : 2
+        } ]
+      } ],
+      "name" : "USGS:06036650:00065:00011"
+    } ]
+  },
+  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+  "nil" : false,
+  "declaredType" : "org.cuahsi.waterml.TimeSeriesResponseType",
+  "globalScope" : true,
+  "typeSubstituted" : false
+}
