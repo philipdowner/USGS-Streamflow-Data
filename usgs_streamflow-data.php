@@ -12,10 +12,6 @@ License: GPL2
 /**
 * An array of rivers with their corresponding USGS site numbers
 *
-* @author Philip Downer <philip@manifestbozeman.com>
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
-* @version v1.0
-*
 * @param array $river The short name of the river requested.
 * @return array $sites An array containing the requested river site numbers.
 */
@@ -110,72 +106,41 @@ function usgs_fetch_riverData($rivers,$dataparameters) {
 			$data .= $s;
 		}
 		$i++;
-	}
-	
-	//Create a new cURL resource
-	$ch = curl_init();
-	
-	//Create a new file
-	$fp = fopen(plugin_dir_path(__FILE__).'streams.json', 'w', 0);
-	
-	//Set URL and other appropriate settings
-	curl_setopt($ch, CURLOPT_URL, $data);
-	curl_setopt($ch, CURLOPT_HEADER, 0);
-//	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_FILE, $fp);
-	
-	//Grab the URL and pass it to the browser/file
-	curl_exec($ch);
-	
-	//Close the cURL resource
-	curl_close($ch);
-	fclose($fp);
-	
-	//DECODE THE JSON
-	$streamflow = file_get_contents(plugin_dir_path(__FILE__).'streams.json');
-	$streamflow = json_decode($streamflow,true);
-	$streamflow = $streamflow['value']['timeSeries'];
-			
+	}		
+
 	//CREATE THE RIVERS ARRAY
 	$river = array();
+
+	$streamflow = wp_remote_get($data);
+	$streamflow = json_decode($streamflow['body']);
+	$stream_counter = count($streamflow->value->timeSeries)-1;
 	
 	//ASSIGN THE APPROPRIATE ITEMS
-	foreach ( $streamflow as $stream ) {
+	foreach ( $streamflow->value->timeSeries as $stream ) {
 		
 		//FIND THE SITE CODE
-		$siteCode = $stream['sourceInfo']['siteCode'][0]['value'];
+		$siteCode = $stream->sourceInfo->siteCode[0]->value;
 		
 		//ADD THE RIVER NAME
-		$river[$siteCode]['name'] = $stream['sourceInfo']['siteName']; //RIVER NAME
+		$river[$siteCode]['name'] = $stream->sourceInfo->siteName; //RIVER NAME
 		
 		//ADD THE LATITUDE AND LONGITUDE
-		$river[$siteCode]['latitude'] = $stream['sourceInfo']['geoLocation']['geogLocation']['latitude'];
-		$river[$siteCode]['longitude'] = $stream['sourceInfo']['geoLocation']['geogLocation']['longitude'];
+		$river[$siteCode]['latitude'] = $stream->sourceInfo->geoLocation->geogLocation->latitude;
+		$river[$siteCode]['longitude'] = $stream->sourceInfo->geoLocation->geogLocation->longitude;
 
-			$variable = $stream['variable'];
-			$variableCode = $variable['variableCode'][0]['value']; //VARIABLE CODE
-			$river[$siteCode]['variables'][$variableCode]['variableName'] = $variable['variableName']; //VARIABLE NAME
-			$river[$siteCode]['variables'][$variableCode]['variableDescription'] = $variable['variableDescription']; //VARIABLE DESCRIPTION
-			$river[$siteCode]['variables'][$variableCode]['unitAbbreviation'] = $variable['unit']['unitAbbreviation'];//UNIT ABBREVIATION
+			$variable = $stream->variable;
+			$variableCode = $variable->variableCode[0]->value; //VARIABLE CODE
+			$river[$siteCode]['variables'][$variableCode]['variableName'] = $variable->variableName; //VARIABLE NAME
+			$river[$siteCode]['variables'][$variableCode]['variableDescription'] = $variable->variableDescription; //VARIABLE DESCRIPTION
+			$river[$siteCode]['variables'][$variableCode]['unitAbbreviation'] = $variable->unit->unitAbbreviation;//UNIT ABBREVIATION
 		
 		//ADD THE VALUES TO THE RIVERS ARRAY
-			$value = $stream['values'];
-			$river[$siteCode]['variables'][$variableCode]['value'] = $value[0]['value'][0]['value'];
+		$value = $stream->values;
+		$river[$siteCode]['variables'][$variableCode]['value'] = $value[0]->value[0]->value;	
 	}
 	
-	//DEBUGGING INFO
-//		echo '<h2>Debugging:</h2>';
-//	  echo '<ul>';
-//	  	echo '<li>Data URL: '.$data.'</li>';
-//	  	echo '<li>There were '.$max.' rivers requested.</li>';
-//	  	echo '<li>There are '.count($streamflow).' items in the array.</li>';
-//	  echo '</ul>';
-
-	//PRINT THE FULL ARRAY
-//	echo '<pre style="font-size:10px;">';
-//	print_r($streamflow);
-//	echo '</pre>';
-//
+	//RETURN THE RIVER ARRAY
+	//do_dump($river);
 	return $river;
 }
 
@@ -235,6 +200,7 @@ function usgs_display_RiverData($riverData,$showMap=false) {
 * @param int $width Width of the image to be returned.
 * @param int $height Height of the image to be returned.
 * @param string $maptype Type of map to be returned. Possible values are 'roadmap', 'satellite', 'hybrid' and 'terrain'.
+* @param bool $echo Whether to output the image or return the map url.
 */
 function usgs_display_map($riverData,$id='riverDataMap',$class='riverMap', $width=350,$height=220,$maptype='terrain',$echo=true) {
 	$baseurl = 'http://maps.googleapis.com/maps/api/staticmap?';
