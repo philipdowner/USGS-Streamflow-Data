@@ -13,20 +13,29 @@ This is a WordPress plugin that fetched streamflow and river data from the USGS.
 * Addition of shortcode to report on a site number(s)
 * Use Google JS Maps API instead of Static Maps
 * Automatic removal/hide of sites not reporting any data.
+* Add Widget(s)
+* Migrate to classes (OOP) rather than collection of functions
 * Improved documentation
+* Implement some sort of caching, perhaps via the WordPress transients API
 
 ## USAGE
 
 See each function for a list of accepted parameters.
 
-Begin by fetching a list of USGS sites as specified in the array.
-    $sites = usgs_fetch_sites(array('jefferson','madison'));
+Begin by specifying the rivers you'd like to display. Identified as an array within the function.
+	$rivers = usgs_fetch_sites(array('jefferson','madison','bighole','beaverhead','ruby'));
 
-Fetch specific data parameters
-    $parameters = usgs_fetch_dataParameters();
+Choose which data parameters to include (stream discharge, temperature, etc), or leave blank to include all.
+	$data_params = usgs_fetch_dataParameters();
 
-Fetch specific river data
-    $riverData = usgs_fetch_riverData($sites,$parameters);
+Place a call to fetch the JSON from USGS
+	$riverData = usgs_fetch_riverData($rivers,$data_params);
+
+Display the river data as an unordered list
+	usgs_display_RiverData($riverData,$showMap=false);
+
+Show a static Google map identifying the locations
+	usgs_display_map($riverData,'riverDataMap','riverMap',650,450,$maptype='terrain',$echo=true);
 
 ## Notes ##
 
